@@ -1,8 +1,6 @@
 <div class="main-content">
   <ol>
-    <li *ngFor="let item of items; let i = index" class="post">
-      Story #{{i}}
-    </li>
+    <item class="item-block" itemID="{{ i + 1 }}"></item>
   </ol>
   <div class="nav">
     <a href="" class="prev">
