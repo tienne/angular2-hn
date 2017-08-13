@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ItemComponent } from './item/item.component';
 
 import { HackerNewsAPIService } from './hackernews-api.service';
+import { MomentModule } from 'angular2-moment';
+import { DomainPipe } from './domain.pipe';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { HackerNewsAPIService } from './hackernews-api.service';
     HeaderComponent,
     StoriesComponent,
     FooterComponent,
-    ItemComponent
+    ItemComponent,
+    DomainPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
   ],
   providers: [
     HackerNewsAPIService
