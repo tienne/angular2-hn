@@ -12,7 +12,10 @@ export class HackerNewsAPIService {
   }
 
   fetchStories(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/topstories.json`)
-      .map(response => response);
+    return this.http.get(`${this.baseUrl}/topstories.json`);
+  }
+
+  fetchItem(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/item/${id}.json`);
   }
 }
