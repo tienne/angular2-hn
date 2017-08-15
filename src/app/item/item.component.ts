@@ -10,6 +10,8 @@ export class ItemComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.item.user = this.item.user || '';
+  }
 
 }
