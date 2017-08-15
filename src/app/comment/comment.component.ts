@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+// comment.component.ts
+
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-comment',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comment.component.scss']
 })
 export class CommentComponent implements OnInit {
+  @Input() comment;
+  collapse: boolean;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.collapse = false;
   }
-
 }
