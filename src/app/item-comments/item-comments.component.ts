@@ -1,9 +1,8 @@
-// item-comments.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { HackerNewsAPIService } from '../hackernews-api.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-item-comments',
@@ -16,7 +15,8 @@ export class ItemCommentsComponent implements OnInit {
 
   constructor(
     private _hackerNewsAPIService: HackerNewsAPIService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private _location: Location
   ) {}
 
   ngOnInit() {
@@ -26,5 +26,9 @@ export class ItemCommentsComponent implements OnInit {
         this.item = data;
       }, error => console.log('Could not load item' + itemID));
     });
+  }
+
+  goBack() {
+    this._location.back();
   }
 }

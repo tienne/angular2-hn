@@ -1,15 +1,21 @@
-<!-- item-comments.component.html -->
-
 <div class="main-content">
   <div class="loading-section" *ngIf="!item">
-    <!-- You can add a loading indicator here if you want to :) -->
+    <div class="loader">
+      Loading...
+    </div>
   </div>
   <div *ngIf="item" class="item">
     <div class="mobile item-header">
-      <!-- Markup that shows only on mobile (to give the app a
-     responsive mobile feel). Same attributes as below,
-     nothing really new here (but refer to the source
-     file if you're interested) -->
+      <p class="title-block">
+        <span class="back-button" (click)="goBack()"></span>
+        <a *ngIf="item.url.indexOf('http://') === 0 || item.url.indexOf('https://') === 0" class="title" href="{{item.url}}">
+          {{item.title}}
+        </a>
+        <a *ngIf="item.url.indexOf('http://') !== 0 && item.url.indexOf('https://') !== 0" class="title" [routerLink]="['/item', item.id]"
+           routerLinkActive="active">
+          {{item.title}}
+        </a>
+      </p>
     </div>
     <div class="laptop" [class.item-header]="item.comments_count > 0 || item.type === 'job'" [class.head-margin]="item.text">
       <p>

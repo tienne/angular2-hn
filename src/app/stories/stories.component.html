@@ -1,9 +1,11 @@
 <div class="main-content">
   <div class="loading-section" *ngIf="!items">
-    <!-- You can add a loading indicator here if you want to :) -->
+    <div class="loader">
+      Loading...
+    </div>
   </div>
   <div *ngIf="items">
-    <ol start="{{ listStart }}">
+    <ol start="{{ listStart }}" class="list-margin">
       <li *ngFor="let item of items" class="post">
         <item class="item-block" [item]="item"></item>
       </li>

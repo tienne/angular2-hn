@@ -1,12 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(https://fonts.googleapis.com/css?family=Open%20Sans);
 
-$mobile-only: "only screen and (max-width : 768px)";
-
 body {
   margin-bottom: 0;
+}
 
-  @media #{$mobile-only} {
+@media only screen and (max-width : 768px) {
+  body {
     margin: 0;
   }
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.app-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  .app-loader {
+    background-color: #fff;
+  }
+}
+
+app-root:empty + .app-loader {
+  opacity: 1;
+  z-index: 100;
+}
+app-root:empty + .app-loader .logo {
+  width: 20vh;
 }
