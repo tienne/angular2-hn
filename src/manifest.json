@@ -17,5 +17,7 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "./?utm_source=web_app_manifest"
+  "start_url": "./?utm_source=web_app_manifest",
+  "gcm_sender_id": "383451595102",
+  "gcm_user_visible_only": true
 }
